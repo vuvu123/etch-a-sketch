@@ -4,41 +4,12 @@
   padding: 0;
 }
 
-body {
+#grid {
   display: grid;
-  /* grid-template-columns: 100px 1fr; */
-  /* grid-gap: 0 30px; */
-  justify-content: center;
-  align-content: center;
-
+  height: 400px;
+  width: 400px;
 }
 
-h1 {
-  text-align: center;
-  /* grid-column: 1; */
-}
-
-.container {
-  height: 600px;
-  width: 600px;
-  display: grid;
-  border: solid 1px red;
-  
-}
-
-.grid-div {
+.grid-item {
   border: solid 1px black;
-}
-
-.grid-div:hover {
-  background-color: blue;
-}
-
-.hovered {
-  background-color: green;
-}
-
-.row-container {
-  display: grid;
-  grid-auto-flow: column;
 }
