@@ -13,7 +13,7 @@ function createDivs(size) {
   }
 }
 
-createDivs(25);
+createDivs(50);
 
 // Add event listener when mouse hovers over div
 // When mouse hovers over, add class "hovered" to element
@@ -25,3 +25,17 @@ allGridDivs.forEach((div) => {
   });
 });
 
+// Add clear button to clear color from grid ()
+const clearButton = document.querySelector('#clear');
+
+clearButton.addEventListener('click', () => {
+  allGridDivs.forEach((div) => {
+    div.className = 'grid-div';
+  });
+});
+
+
+// Slider Bar | Add input element, type=range, min 10 -> max 100
+
+
+// Add random color
