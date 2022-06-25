@@ -38,10 +38,6 @@ h1 {
   background-color: green;
 }
 
-.cleared {
-  background-color: white;
-}
-
 .row-container {
   display: grid;
   grid-auto-flow: column;

@@ -13,7 +13,7 @@ function createDivs(size) {
   }
 }
 
-createDivs(50);
+createDivs(16);
 
 // Add event listener when mouse hovers over div
 // When mouse hovers over, add class "hovered" to element
@@ -35,7 +35,17 @@ clearButton.addEventListener('click', () => {
 });
 
 
-// Slider Bar | Add input element, type=range, min 10 -> max 100
+// TODO: Slider Bar 
+// Add input element, type=range, values: 10-60
+const sizeRange = document.querySelector('#size');
+const sizeDisplay = document.querySelector('#size-display');
+
+sizeRange.addEventListener('input', () => {
+  sizeDisplay.textContent = `${sizeRange.value}x${sizeRange.value}`;
+});
+
+
+
 
 
 // Add random color
