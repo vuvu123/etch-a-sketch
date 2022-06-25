@@ -4,15 +4,35 @@
   padding: 0;
 }
 
-.container {
-  height: 1270px;
-  width: 860px;
+body {
   display: grid;
-  border: solid 2px red;
+  justify-content: center;
+  align-content: center;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  height: 600px;
+  width: 600px;
+  display: grid;
+  border: solid 1px red;
+  
 }
 
 .grid-div {
-  border: solid 1px green;
+  border: solid 1px black;
+}
+
+.grid-div:hover {
+  background-color: blue;
+}
+
+.hovered {
+  background-color: green;
 }
 
 .row-container {
