@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 1270px;
+  width: 860px;
+  display: grid;
+  border: solid 2px red;
+}
+
+.grid-div {
+  border: solid 1px green;
+}
+
+.row-container {
+  display: grid;
+  grid-auto-flow: column;
+}
