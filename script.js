@@ -1,11 +1,11 @@
 const container = document.querySelector('.container');
 
-function createDivs() {
-  for (let i = 0; i < 16; i++) {
+function createDivs(size) {
+  for (let i = 0; i < size; i++) {
     const rowDiv = document.createElement('div');
     rowDiv.className = 'row-container';
     container.appendChild(rowDiv);
-    for (let j = 0; j < 16; j++) {
+    for (let j = 0; j < size; j++) {
       const colDiv = document.createElement('div');
       colDiv.className = 'grid-div';
       rowDiv.appendChild(colDiv);
@@ -13,7 +13,7 @@ function createDivs() {
   }
 }
 
-createDivs();
+createDivs(25);
 
 // Add event listener when mouse hovers over div
 // When mouse hovers over, add class "hovered" to element
