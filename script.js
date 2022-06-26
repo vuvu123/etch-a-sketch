@@ -1,5 +1,27 @@
+const DEFAULT_COLOR = 'black';
+const DEFAULT_MODE = 'color';
+const DEFAULT_SIZE = 16;
+
+let currentColor = DEFAULT_COLOR;
+let currentGridSize = DEFAULT_SIZE;
+let currentMode = DEFAULT_MODE;
+
 const grid = document.querySelector('#grid');
 const clearBtn = document.querySelector('#clearBtn');
+const rainbowBtn = document.querySelector('#rainbowBtn');
+const colorBtn = document.querySelector('#colorBtn');
+
+function setCurrentColor(color) {
+  currentColor = color;
+}
+
+function setCurrentGridSize(size) {
+  currentGridSize = size;
+}
+
+function setCurrentMode(mode) {
+  currentMode = mode;
+}
 
 function generateGrid(size) {
   grid.style.gridTemplate = `repeat(${size}, 1fr) / repeat(${size}, 1fr)`;
@@ -12,10 +34,18 @@ function generateGrid(size) {
   }
 }
 
-generateGrid(16);
-
 function changeColor(e) {
-  e.target.style.backgroundColor = 'blue';
+  const randomRed = Math.floor(Math.random() * 256);
+  const randomGreen = Math.floor(Math.random() * 256);
+  const randomBlue = Math.floor(Math.random() * 256);
+
+  if (currentMode === 'color') {
+    e.target.style.backgroundColor = currentColor;
+  } else if (currentMode === 'rainbow') {
+    e.target.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+  } else if (currentMode === 'eraser') {
+    e.target.style.backgroundColor = "white";
+  }
 }
 
 function clearGrid() {
@@ -25,7 +55,16 @@ function clearGrid() {
   });
 }
 
-clearBtn.addEventListener('click', () => {
+function resetGrid() {
   clearGrid();
-  generateGrid(16);
+  generateGrid(currentGridSize);
+}
+
+clearBtn.addEventListener('click', resetGrid);
+
+rainbowBtn.addEventListener('click', () => {
+  setCurrentMode('rainbow');
+  resetGrid();
 });
+
+generateGrid(currentGridSize);
