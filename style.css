@@ -22,11 +22,15 @@ main {
 
 h1 {
   margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 36px;
 }
 
 button {
   padding: 8px 16px;
   border-radius: 8%;
+  width: 100px;
+  font-weight: 600;
 }
 
 .settings {
@@ -44,6 +48,10 @@ button {
   background-color: white;
 }
 
-.grid-item {
-  /* border: solid 1px black; */
+#colorPicker {
+  width: 100px;
+}
+
+.active {
+  background-color: lightgoldenrodyellow;
 }

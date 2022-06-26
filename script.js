@@ -1,6 +1,7 @@
 const DEFAULT_COLOR = 'black';
 const DEFAULT_MODE = 'color';
 const DEFAULT_SIZE = 16;
+const ALL_BUTTONS = document.querySelectorAll('button');
 
 let currentColor = DEFAULT_COLOR;
 let currentGridSize = DEFAULT_SIZE;
@@ -25,6 +26,17 @@ function setCurrentGridSize(size) {
 
 function setCurrentMode(mode) {
   currentMode = mode;
+}
+
+function activateButton(button) {
+  deactivateAllButtons();
+  button.classList.add('active');
+}
+
+function deactivateAllButtons() {
+  ALL_BUTTONS.forEach((button) => {
+    button.classList.remove('active');
+  });
 }
 
 function generateGrid(size) {
@@ -68,7 +80,7 @@ clearBtn.addEventListener('click', resetGrid);
 
 rainbowBtn.addEventListener('click', () => {
   setCurrentMode('rainbow');
-  resetGrid();
+  activateButton(rainbowBtn);
 });
 
 colorPicker.addEventListener('input', () => {
@@ -79,12 +91,13 @@ colorPicker.addEventListener('input', () => {
 colorBtn.addEventListener('click', () => {
   setCurrentColor(colorPicker.value);
   setCurrentMode('color');
-  resetGrid();
+  activateButton(colorBtn);
 });
 
 eraserBtn.addEventListener('click', () => {
   setCurrentColor('#FFFFFF');
   setCurrentMode('eraser');
+  activateButton(eraserBtn);
 });
 
 sizeSlider.addEventListener('input', () => {
