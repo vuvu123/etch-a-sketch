@@ -10,6 +10,9 @@ const grid = document.querySelector('#grid');
 const clearBtn = document.querySelector('#clearBtn');
 const rainbowBtn = document.querySelector('#rainbowBtn');
 const colorBtn = document.querySelector('#colorBtn');
+const colorPicker = document.querySelector('#colorPicker');
+const sizeSlider = document.querySelector('#sizeSlider');
+const sizeText = document.querySelector('#sizeText');
 
 function setCurrentColor(color) {
   currentColor = color;
@@ -65,6 +68,16 @@ clearBtn.addEventListener('click', resetGrid);
 rainbowBtn.addEventListener('click', () => {
   setCurrentMode('rainbow');
   resetGrid();
+});
+
+colorBtn.addEventListener('click', () => {
+  setCurrentColor(colorPicker.value);
+  setCurrentMode('color');
+  resetGrid();
+});
+
+sizeSlider.addEventListener('input', () => {
+  sizeText.textContent = `${sizeSlider.value}x${sizeSlider.value}`;
 });
 
 generateGrid(currentGridSize);
