@@ -16,6 +16,10 @@ const sizeSlider = document.querySelector('#sizeSlider');
 const sizeText = document.querySelector('#sizeText');
 const eraserBtn = document.querySelector('#eraserBtn');
 
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
 function setCurrentColor(color) {
   currentColor = color;
 }
@@ -46,11 +50,13 @@ function generateGrid(size) {
     const gridItem = document.createElement('div');
     gridItem.classList.add("grid-item");
     gridItem.addEventListener('mouseover', changeColor);
+    gridItem.addEventListener('mousedown', changeColor);
     grid.appendChild(gridItem);
   }
 }
 
 function changeColor(e) {
+  if (e.type === 'mouseover' && !mouseDown) return;
   const randomRed = Math.floor(Math.random() * 256);
   const randomGreen = Math.floor(Math.random() * 256);
   const randomBlue = Math.floor(Math.random() * 256);
