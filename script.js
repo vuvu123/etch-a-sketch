@@ -71,6 +71,11 @@ rainbowBtn.addEventListener('click', () => {
   resetGrid();
 });
 
+colorPicker.addEventListener('input', () => {
+  setCurrentColor(colorPicker.value);
+  setCurrentMode('color');
+});
+
 colorBtn.addEventListener('click', () => {
   setCurrentColor(colorPicker.value);
   setCurrentMode('color');

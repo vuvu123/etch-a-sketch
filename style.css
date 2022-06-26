@@ -9,6 +9,9 @@ body {
   align-content: space-between;
   justify-items: center;
   background-color: lightgrey;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 main {
@@ -23,6 +26,7 @@ h1 {
 
 button {
   padding: 8px 16px;
+  border-radius: 8%;
 }
 
 .settings {
@@ -36,7 +40,7 @@ button {
   display: grid;
   height: 600px;
   width: 600px;
-  border: solid .5px black;
+  border: solid 1px black;
   background-color: white;
 }
 
