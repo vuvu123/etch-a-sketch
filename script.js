@@ -13,6 +13,7 @@ const colorBtn = document.querySelector('#colorBtn');
 const colorPicker = document.querySelector('#colorPicker');
 const sizeSlider = document.querySelector('#sizeSlider');
 const sizeText = document.querySelector('#sizeText');
+const eraserBtn = document.querySelector('#eraserBtn');
 
 function setCurrentColor(color) {
   currentColor = color;
@@ -74,6 +75,10 @@ colorBtn.addEventListener('click', () => {
   setCurrentColor(colorPicker.value);
   setCurrentMode('color');
   resetGrid();
+});
+
+eraserBtn.addEventListener('click', () => {
+  setCurrentColor('#FFFFFF');
 });
 
 sizeSlider.addEventListener('input', () => {
