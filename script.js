@@ -79,6 +79,7 @@ colorBtn.addEventListener('click', () => {
 
 eraserBtn.addEventListener('click', () => {
   setCurrentColor('#FFFFFF');
+  setCurrentMode('eraser');
 });
 
 sizeSlider.addEventListener('input', () => {
