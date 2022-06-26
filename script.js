@@ -78,6 +78,8 @@ colorBtn.addEventListener('click', () => {
 
 sizeSlider.addEventListener('input', () => {
   sizeText.textContent = `${sizeSlider.value}x${sizeSlider.value}`;
+  setCurrentGridSize(sizeSlider.valueAsNumber);
+  resetGrid();
 });
 
 generateGrid(currentGridSize);
