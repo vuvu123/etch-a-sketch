@@ -83,23 +83,19 @@ function resetGrid() {
   generateGrid(currentGridSize);
 }
 
+function setColor() {
+  setCurrentColor(colorPicker.value);
+  setCurrentMode('color');
+  activateButton(colorBtn);
+}
+
 clearBtn.addEventListener('click', resetGrid);
+colorPicker.addEventListener('input', setColor);
+colorBtn.addEventListener('click', setColor);
 
 rainbowBtn.addEventListener('click', () => {
   setCurrentMode('rainbow');
   activateButton(rainbowBtn);
-});
-
-colorPicker.addEventListener('input', () => {
-  setCurrentColor(colorPicker.value);
-  setCurrentMode('color');
-  activateButton(colorBtn);
-});
-
-colorBtn.addEventListener('click', () => {
-  setCurrentColor(colorPicker.value);
-  setCurrentMode('color');
-  activateButton(colorBtn);
 });
 
 eraserBtn.addEventListener('click', () => {
