@@ -58,6 +58,7 @@ function generateGrid(size) {
 
 function changeColor(e) {
   if (e.type === 'mouseover' && !mouseDown) return;
+  
   const randomRed = Math.floor(Math.random() * 256);
   const randomGreen = Math.floor(Math.random() * 256);
   const randomBlue = Math.floor(Math.random() * 256);
