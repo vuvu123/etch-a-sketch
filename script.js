@@ -10,6 +10,7 @@ let currentMode = DEFAULT_MODE;
 const grid = document.querySelector('#grid');
 const clearBtn = document.querySelector('#clearBtn');
 const rainbowBtn = document.querySelector('#rainbowBtn');
+
 const colorBtn = document.querySelector('#colorBtn');
 const colorPicker = document.querySelector('#colorPicker');
 const sizeSlider = document.querySelector('#sizeSlider');
@@ -17,8 +18,8 @@ const sizeText = document.querySelector('#sizeText');
 const eraserBtn = document.querySelector('#eraserBtn');
 
 let mouseDown = false
-document.body.onmousedown = () => (mouseDown = true)
-document.body.onmouseup = () => (mouseDown = false)
+grid.onmousedown = () => (mouseDown = true)
+grid.onmouseup = () => (mouseDown = false)
 
 function setCurrentColor(color) {
   currentColor = color;
@@ -92,6 +93,7 @@ rainbowBtn.addEventListener('click', () => {
 colorPicker.addEventListener('input', () => {
   setCurrentColor(colorPicker.value);
   setCurrentMode('color');
+  activateButton(colorBtn);
 });
 
 colorBtn.addEventListener('click', () => {
